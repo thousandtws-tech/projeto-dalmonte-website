@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* ── HP-inspired palette ── */
+  /* ── HP-inspired palette (Native Dark Mode) ── */
   /* Brand & Accent */
   --accent:   #0096D6;   /* HP Electric Blue — signal CTA */
   --accent-2: #00ADEF;   /* lighter Electric Blue */
@@ -9,24 +9,24 @@
   --navy-2:   #002256;   /* deep navy alt */
 
   /* Surface */
-  --bg:       #ffffff;
-  --bg-2:     #f4f7fa;   /* blue-tinted light surface */
-  --bg-navy:  #1F1F6C;   /* dark navy surface */
-  --card:     #ffffff;
-  --card-ink: #1a1a1a;
+  --bg:       #0f1117;   /* Deep Dark Background */
+  --bg-2:     #181c26;   /* Dark Surface 2 */
+  --bg-navy:  #1F1F6C;
+  --card:     #161b28;   /* Dark Card Surface */
+  --card-ink: #f0f4f8;
 
   /* Text */
-  --ink:         #1a1a1a;   /* primary text */
-  --ink-2:       #3d3d3d;   /* secondary text */
-  --muted:       #6b6b6b;   /* muted / caption */
+  --ink:         #f0f4f8;   /* Primary Bright Text */
+  --ink-2:       #c8d0da;   /* Secondary Light Text */
+  --muted:       #7a8799;   /* Muted Text */
   --on-accent:   #ffffff;   /* text on blue */
   --on-navy:     #ffffff;   /* text on navy */
 
   /* Structural */
-  --line:       rgba(0,150,214,0.12);
-  --line-strong: rgba(0,0,0,0.16);
-  --shadow-sm: 0 1px 0 rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
-  --shadow-md: 0 8px 28px -8px rgba(0,150,214,0.18), 0 2px 6px rgba(0,0,0,0.07);
+  --line:        rgba(0,150,214,0.18);
+  --line-strong: rgba(255,255,255,0.20);
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.25);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.4);
   --radius: 6px;
   --radius-sm: 4px;
 
@@ -34,7 +34,7 @@
   --font-display: "Tahoma", "Geneva", "Verdana", sans-serif;
   --font-sans:    "Inter", "Tahoma", system-ui, -apple-system, sans-serif;
   --font-mono:    "Courier New", ui-monospace, monospace;
-  --font-serif:   "Georgia", serif;   /* fallback for italic moments */
+  --font-serif:   "Georgia", serif;
 }
 
 [data-mode="dark"] {

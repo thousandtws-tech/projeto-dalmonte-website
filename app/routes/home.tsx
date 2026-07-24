@@ -43,7 +43,7 @@ const ACCENTS: Record<string, [string, string]> = {
 
 export default function Home() {
   useGSAPAnimations();
-  const [tweaks, setTweaks] = useState<TweakState>(TWEAK_DEFAULTS);
+  const [tweaks, setTweaks] = useState<TweakState>({ ...TWEAK_DEFAULTS, mode: "dark" });
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -54,21 +54,21 @@ export default function Home() {
 
   useEffect(() => {
     const root = document.documentElement;
-    root.setAttribute("data-mode", tweaks.mode || "light");
+    root.setAttribute("data-mode", "dark");
     root.setAttribute("data-hero", tweaks.heroLayout || "centered");
     const pair = ACCENTS[tweaks.accent] || ["#0096D6", "#00ADEF"];
     root.style.setProperty("--accent", pair[0]);
     root.style.setProperty("--accent-2", pair[1]);
-  }, [tweaks.accent, tweaks.mode, tweaks.heroLayout]);
+  }, [tweaks.accent, tweaks.heroLayout]);
 
   const handleTweakChange = (edits: Partial<TweakState>) => {
-    setTweaks((prev) => ({ ...prev, ...edits }));
+    setTweaks((prev) => ({ ...prev, ...edits, mode: "dark" }));
   };
 
   return (
-    <SkeletonProvider isDark={tweaks.mode === "dark"}>
+    <SkeletonProvider isDark={true}>
       <Nav scrollY={scrollY} />
-      <Hero headline={tweaks.headline} isDark={tweaks.mode === "dark"} />
+      <Hero headline={tweaks.headline} isDark={true} />
       <ValueProp />
       <Pains />
       <Solution />
@@ -82,7 +82,7 @@ export default function Home() {
       <PS show={tweaks.showPs} />
       <Footer />
       <StickyCTA scrollY={scrollY} />
-      <TweaksPanel tweaks={tweaks} onChange={handleTweakChange} />
+      <TweaksPanel tweaks={{ ...tweaks, mode: "dark" }} onChange={handleTweakChange} />
     </SkeletonProvider>
   );
 }

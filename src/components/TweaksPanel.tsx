@@ -11,7 +11,7 @@ export interface TweakState {
 export const TWEAK_DEFAULTS: TweakState = {
   headline: "A",
   accent: "#0096D6",
-  mode: "light",
+  mode: "dark",
   showPs: true,
   heroLayout: "centered",
 };
